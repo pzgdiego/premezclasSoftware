@@ -25,18 +25,7 @@ namespace PremezclasPremium
 			InitializeComponent();
 		}
 
-        private void button_menu(object sender, RoutedEventArgs e)
-        {
-            if(Menu.Visibility == Visibility.Collapsed)
-            {
-                Menu.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Menu.Visibility = Visibility.Collapsed;
-            }
-        }
-
+        // botones panel
         private void button_operaciones(object sender, RoutedEventArgs e)
         {
             Main.Visibility = Visibility.Hidden;

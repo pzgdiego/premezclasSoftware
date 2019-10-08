@@ -37,29 +37,20 @@
                 <ColumnDefinition Width="554*" />
                 <ColumnDefinition Width="135*" />
             </Grid.ColumnDefinitions>
-            <Grid x:Name="MenuIcon" Margin="5">
-                <Button Click="button_menu" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="40" Style="{StaticResource MyButton}">
-                    <Button.Background>
-                        <ImageBrush ImageSource="img/icon/round_menu_white_18dp.png"/>
-                    </Button.Background>
-                </Button>
-            </Grid>
-            <Grid x:Name="atras" Grid.Column="1" Margin="5" Visibility="Hidden">
+            <Grid x:Name="atras" Margin="5" Visibility="Hidden">
                 <Button Click="button_atras" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="40" Style="{StaticResource MyButton}">
                     <Button.Background>
                         <ImageBrush ImageSource="img/icon/round_keyboard_backspace_white_18dp.png"/>
                     </Button.Background>
                 </Button>
             </Grid>
-            <TextBlock Grid.Column="2" TextAlignment="Center" Text="Premezclas Premium Venezuela C.A" Foreground="White" FontSize="28" VerticalAlignment="Center" Height="36" Margin="0,12"/>
+            <TextBlock Grid.Column="2" TextAlignment="Center" Text="Premezclas Venezolanas Premium C.A" Foreground="White" FontSize="28" VerticalAlignment="Center" Height="36" Margin="0,12"/>
             <Grid Grid.Column="3">
                 <Grid.Background>
                     <ImageBrush ImageSource="logotipo.png" Stretch="Uniform"/>
                 </Grid.Background>
 
             </Grid>
-        </Grid>
-        <Grid x:Name="Menu" Visibility="Collapsed" Background="Black" Width="200" DockPanel.Dock="Left">
         </Grid>
         <Grid>
             <Grid x:Name="Main" Visibility="Visible">
@@ -108,50 +99,68 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
-                    <Ellipse Width="100" Height="100" Margin="0,0,0,10">
-                        <Ellipse.Fill>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Rectangle Width="150" Height="150">
+                        <Rectangle.Fill>
                             <ImageBrush ImageSource="img/diagrama_de_proceso.png" Stretch="UniformToFill"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <Button Click="button_diagrama_de_proceso" Width="100" Height="50" Content="Diagrama de Procesos" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="button_diagrama_de_proceso" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Diagrama de Procesos"/>
+                        </Button.Content>
+                    </Button>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Ellipse Width="100" Height="100" Margin="0,0,0,10">
-                        <Ellipse.Fill>
+                    <Rectangle Width="150" Height="150">
+                        <Rectangle.Fill>
                             <ImageBrush ImageSource="img/layout.png" Stretch="UniformToFill"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <Button Click="button_layout" Width="100" Height="50" Content="Layout" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="button_layout" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Layout"/>
+                        </Button.Content>
+                    </Button>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Ellipse Width="100" Height="100" Margin="0,0,0,10">
-                        <Ellipse.Fill>
+                    <Rectangle Width="150" Height="150">
+                        <Rectangle.Fill>
                             <ImageBrush ImageSource="img/control_de_operaciones.png" Stretch="UniformToFill"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <Button Click="button_control_de_operaciones" Width="100" Height="50" Content="Control de Operaciones" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="button_control_de_operaciones" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Control de Operaciones"/>
+                        </Button.Content>
+                    </Button>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Ellipse Width="100" Height="100" Margin="0,0,0,10">
-                        <Ellipse.Fill>
+                    <Rectangle Width="150" Height="150">
+                        <Rectangle.Fill>
                             <ImageBrush ImageSource="img/documentos_tecnicos.png" Stretch="UniformToFill"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <Button Click="button_documentos_tecnicos" Width="100" Height="50" Content="Documentos Técnicos" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="button_documentos_tecnicos" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Documentos Técnicos"/>
+                        </Button.Content>
+                    </Button>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Ellipse Width="100" Height="100" Margin="0,0,0,10">
-                        <Ellipse.Fill>
+                    <Rectangle Width="150" Height="150">
+                        <Rectangle.Fill>
                             <ImageBrush ImageSource="img/instrucciones.png" Stretch="UniformToFill"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <Button Click="button_instrucciones" Width="100" Height="50" Content="Instrucciones" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="button_instrucciones" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Instrucciones"/>
+                        </Button.Content>
+                    </Button>
                 </StackPanel>
             </Grid>
 
@@ -166,39 +175,55 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
-                    <Ellipse Width="100" Height="100" Margin="0,0,0,10">
-                        <Ellipse.Fill>
+                    <Rectangle Width="150" Height="150">
+                        <Rectangle.Fill>
                             <ImageBrush ImageSource="img/analisis_de_riesgo.png" Stretch="UniformToFill"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <Button Click="button_analisis_de_riesgo" Width="100" Height="50" Content="Análisis de Riesgo" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="button_analisis_de_riesgo" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Análisis de Riesgo"/>
+                        </Button.Content>
+                    </Button>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Ellipse Width="100" Height="100" Margin="0,0,0,10">
-                        <Ellipse.Fill>
+                    <Rectangle Width="150" Height="150">
+                        <Rectangle.Fill>
                             <ImageBrush ImageSource="img/EPP.png" Stretch="UniformToFill"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <Button Click="button_EPP" Width="100" Height="50" Content="EPP" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="button_EPP" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="EPP"/>
+                        </Button.Content>
+                    </Button>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Ellipse Width="100" Height="100" Margin="0,0,0,10">
-                        <Ellipse.Fill>
+                    <Rectangle Width="150" Height="150">
+                        <Rectangle.Fill>
                             <ImageBrush ImageSource="img/instrucciones_de_seguridad.png" Stretch="UniformToFill"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <Button Click="button_instrucciones_de_seguridad" Width="100" Height="50" Content="Instrucciones de Seguridad" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="button_instrucciones_de_seguridad" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Instrucciones de Seguridad"/>
+                        </Button.Content>
+                    </Button>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Ellipse Width="100" Height="100" Margin="0,0,0,10">
-                        <Ellipse.Fill>
+                    <Rectangle Width="150" Height="150">
+                        <Rectangle.Fill>
                             <ImageBrush ImageSource="img/formatos_SHA.png" Stretch="UniformToFill"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <Button Click="button_formatos_SHA" Width="100" Height="50" Content="Formatos SHA" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="button_formatos_SHA" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Formatos SHA"/>
+                        </Button.Content>
+                    </Button>
                 </StackPanel>
             </Grid>
         </Grid>

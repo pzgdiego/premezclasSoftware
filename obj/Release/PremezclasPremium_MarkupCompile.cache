@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-D:\Genesis\premezclasSoftware\obj\Debug\
+D:\Genesis\premezclasSoftware\obj\Release\
 PremezclasPremium
 none
 false
-DEBUG;TRACE
+TRACE
 D:\Genesis\premezclasSoftware\App.xaml
 3-1371620272
 
@@ -16,5 +16,5 @@ D:\Genesis\premezclasSoftware\App.xaml
 13-1505183044
 DiagramaProcesos.xaml;Layout.xaml;MainWindow.xaml;
 
-False
+True
 
