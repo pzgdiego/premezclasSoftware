@@ -5,9 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PremezclasPremium"
         mc:Ignorable="d"
+        Icon="img/logotipo.png"
         Title="Premezclas Premium" WindowState="Maximized" Height="600" Width="800">
 
     <Window.Resources>
+        <local:ConvertFileImage x:Key="ConvertFileImage"/>
+        <Style TargetType="ListViewItem">
+            <Setter Property="Height" Value="50" />
+        </Style>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Cursor" Value="Hand" />
@@ -19,16 +24,20 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Opacity" Value="0.4" />
+                                <Setter Property="Opacity" Value="0.7" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
+
     </Window.Resources>
 
-    <DockPanel Background="#FF021D07">
+    <DockPanel>
+        <DockPanel.Background>
+            <ImageBrush ImageSource="img/background.jpg" Stretch="UniformToFill" Opacity="0.3"/>
+        </DockPanel.Background>
 
         <Grid x:Name="Header" Visibility="Visible" Height="60" DockPanel.Dock="Top" Background="#FF0D7E20" >
             <Grid.ColumnDefinitions>
@@ -37,17 +46,33 @@
                 <ColumnDefinition Width="554*" />
                 <ColumnDefinition Width="135*" />
             </Grid.ColumnDefinitions>
-            <Grid x:Name="atras" Margin="5" Visibility="Hidden">
-                <Button Click="button_atras" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="40" Style="{StaticResource MyButton}">
-                    <Button.Background>
-                        <ImageBrush ImageSource="img/icon/round_keyboard_backspace_white_18dp.png"/>
-                    </Button.Background>
-                </Button>
+            <Grid>
+                <Grid x:Name="atras" Margin="5" Visibility="Hidden">
+                    <Button Click="button_atras" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="40" Style="{StaticResource MyButton}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="img/icon/round_keyboard_backspace_white_18dp.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+                <Grid x:Name="atras_operaciones" Margin="5" Visibility="Hidden">
+                    <Button Click="button_atras_operaciones" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="40" Style="{StaticResource MyButton}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="img/icon/round_keyboard_backspace_white_18dp.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+                <Grid x:Name="atras_seguridad" Margin="5" Visibility="Hidden">
+                    <Button Click="button_atras_seguridad" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="40" Style="{StaticResource MyButton}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="img/icon/round_keyboard_backspace_white_18dp.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
             </Grid>
             <TextBlock Grid.Column="2" TextAlignment="Center" Text="Premezclas Venezolanas Premium C.A" Foreground="White" FontSize="28" VerticalAlignment="Center" Height="36" Margin="0,12"/>
             <Grid Grid.Column="3">
                 <Grid.Background>
-                    <ImageBrush ImageSource="logotipo.png" Stretch="Uniform"/>
+                    <ImageBrush ImageSource="img/logotipo.png" Stretch="Uniform"/>
                 </Grid.Background>
 
             </Grid>
@@ -141,7 +166,7 @@
                 <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Rectangle Width="150" Height="150">
                         <Rectangle.Fill>
-                            <ImageBrush ImageSource="img/documentos_tecnicos.png" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="img/documentos_tecnicos.jpg" Stretch="UniformToFill"/>
                         </Rectangle.Fill>
                     </Rectangle>
                     <Button Click="button_documentos_tecnicos" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
@@ -153,7 +178,7 @@
                 <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Rectangle Width="150" Height="150">
                         <Rectangle.Fill>
-                            <ImageBrush ImageSource="img/instrucciones.png" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="img/instrucciones_operacionales.png" Stretch="UniformToFill"/>
                         </Rectangle.Fill>
                     </Rectangle>
                     <Button Click="button_instrucciones" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
@@ -222,6 +247,75 @@
                     <Button Click="button_formatos_SHA" Width="150" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
                         <Button.Content>
                             <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Formatos SHA"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid x:Name="ControlOperaciones" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+                <StackPanel>
+                    <ListView x:Name="lvControlOperaciones" MouseDoubleClick="lvControlOperaciones_DoubleClick" ItemsSource="{Binding Files_Control}" Width="700" FontSize="14">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="150">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Extension, Converter={StaticResource ConvertFileImage}}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="500" Header="Nombre"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Click="button_guardar_control_operaciones" Width="700" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Guardar En"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid x:Name="DocumentosTecnicos" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+                <StackPanel>
+                    <ListView x:Name="lvDocumentosTecnicos" MouseDoubleClick="lvDocumentosTecnicos_DoubleClick" ItemsSource="{Binding Files_Documentos}" Width="700" FontSize="14">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="150">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Extension, Converter={StaticResource ConvertFileImage}}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="500" Header="Nombre"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Click="button_guardar_documentos_tecnicos" Width="700" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Guardar En"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid x:Name="Instrucciones" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+                <StackPanel>
+                    <ListView x:Name="lvInstrucciones" MouseDoubleClick="lvInstrucciones_DoubleClick" ItemsSource="{Binding Files_Instrucciones}" Width="700" FontSize="14">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="150">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Extension, Converter={StaticResource ConvertFileImage}}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="500" Header="Nombre"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Click="button_guardar_instrucciones" Width="700" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="16" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Guardar En"/>
                         </Button.Content>
                     </Button>
                 </StackPanel>

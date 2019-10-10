@@ -35,3 +35,4 @@ D:\Genesis\premezclasSoftware\obj\Debug\PremezclasPremium.Properties.Resources.r
 D:\Genesis\premezclasSoftware\obj\Debug\PremezclasPremium.csproj.GenerateResource.cache
 D:\Genesis\premezclasSoftware\obj\Debug\PremezclasPremium.exe
 D:\Genesis\premezclasSoftware\obj\Debug\PremezclasPremium.pdb
+D:\Genesis\premezclasSoftware\obj\Debug\GeneratedInternalTypeHelper.g.cs

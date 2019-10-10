@@ -5,11 +5,131 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PremezclasPremium"
         mc:Ignorable="d"
-        Title="Layout" Height="600" Width="1280">
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="img/Layout/layout.jpg" Stretch="Uniform"/>
-        </Grid.Background>
+        Title="Layout" Height="600" Width="1280" 
+        Icon="img/logotipo.png">
 
-    </Grid>
+    <Window.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.4" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel Background="#FF063F10">
+        <Grid x:Name="HeaderLayout" Visibility="Visible" Height="60" DockPanel.Dock="Top" Background="#FF0D7E20" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="53*" />
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="554*" />
+                <ColumnDefinition Width="135*" />
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="atrasLayout" Margin="5" Visibility="Hidden">
+                <Button Click="Btn_atras_layout" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="40" Style="{StaticResource MyButton}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="img/icon/round_keyboard_backspace_white_18dp.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <TextBlock Grid.Column="2" TextAlignment="Center" Text="Layout" Foreground="White" FontSize="28" VerticalAlignment="Center" Height="36" Margin="0,12"/>
+
+        </Grid>
+        <Grid Background="#FF063F10">
+            <Grid x:Name="MainLayout" Visibility="Visible">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Rectangle Width="200" Height="150">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="img/Layout/Layout PB.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="Btn_pb" Width="200" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="18" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Planta Baja"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Rectangle Width="200" Height="150">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="img/Layout/Layout P1.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="Btn_p1" Width="200" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="18" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Piso 1"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Rectangle Width="200" Height="150">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="img/Layout/Layout P2.png" Stretch="Fill"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="Btn_p2" Width="200" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="18" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Piso 2"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Rectangle Width="200" Height="150">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="img/Layout/Layout P3.png" Stretch="Fill"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Click="Btn_p3" Width="200" Height="50" Background="#FF0D7E20" Foreground="White" FontSize="18" FontWeight="Bold" Style="{StaticResource MyButton}">
+                        <Button.Content>
+                            <TextBlock TextAlignment="Center" TextWrapping="Wrap" Text="Piso 3"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid x:Name="pb" Visibility="Hidden">
+                <Grid.Background>
+                    <ImageBrush ImageSource="img/Layout/Layout PB.PNG" Stretch="Uniform"/>
+                </Grid.Background>
+            </Grid>
+            <Grid x:Name="p1" Visibility="Hidden">
+                <Grid.Background>
+                    <ImageBrush ImageSource="img/Layout/Layout P1.PNG" Stretch="Uniform"/>
+                </Grid.Background>
+            </Grid>
+            <Grid x:Name="p2" Visibility="Hidden">
+                <Grid.Background>
+                    <ImageBrush ImageSource="img/Layout/Layout P2.PNG" Stretch="Uniform"/>
+                </Grid.Background>
+            </Grid>
+            <Grid x:Name="p3" Visibility="Hidden">
+                <Grid.Background>
+                    <ImageBrush ImageSource="img/Layout/Layout P3.PNG" Stretch="Uniform"/>
+                </Grid.Background>
+            </Grid>
+        </Grid>
+    </DockPanel>
 </Window>

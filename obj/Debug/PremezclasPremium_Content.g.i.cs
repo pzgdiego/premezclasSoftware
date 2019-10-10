@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/icon/round_keyboard_backspace_white_18dp.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("media/file_doc.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("media/file_docx.png")]
 
 

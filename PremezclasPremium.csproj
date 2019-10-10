@@ -109,16 +109,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="recepcion.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\analisis_de_riesgo.png" />
     <Resource Include="img\control_de_operaciones.png" />
     <Resource Include="img\diagrama_de_proceso.png" />
-    <Resource Include="img\documentos_tecnicos.png" />
     <Resource Include="img\EPP.png" />
     <Resource Include="img\formatos_SHA.png" />
-    <Resource Include="img\instrucciones.png" />
     <Resource Include="img\instrucciones_de_seguridad.png" />
     <Resource Include="img\layout.png" />
   </ItemGroup>
@@ -130,16 +125,33 @@
     <Resource Include="img\DiagramaProcesos\diagrama_procesos.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\Layout\layout.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\icon\round_menu_white_18dp.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logotipo.png" />
+    <Resource Include="img\logotipo.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\icon\round_keyboard_backspace_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\documentos_tecnicos.jpg" />
+    <Resource Include="img\instrucciones_operacionales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\file_pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Layout\Layout P1.PNG" />
+    <Resource Include="img\Layout\Layout P2.PNG" />
+    <Resource Include="img\Layout\Layout P3.PNG" />
+    <Resource Include="img\Layout\Layout PB.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\file_doc.png" />
+    <Resource Include="Media\file_docx.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
